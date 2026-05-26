@@ -1,0 +1,15 @@
+services:
+  express_app:
+    build: .
+    ports:
+      - 127.0.0.1:8080:8080
+    volumes:
+      - ./:usr/src/app
+
+  watchtower:
+    image: nickfedor/watchtower
+    environment:
+      -  WATCHTOWER_POLL_INTERVAL=60
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: watchtower
