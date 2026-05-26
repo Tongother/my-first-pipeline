@@ -4,7 +4,7 @@ services:
     ports:
       - 127.0.0.1:8080:8080
     volumes:
-      - ./:usr/src/app
+      - ./:/usr/src/app
 
   watchtower:
     image: nickfedor/watchtower
